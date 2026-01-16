@@ -1,7 +1,10 @@
 package com.example.listycity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -18,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
     ListView cityList;
     ArrayAdapter<String> cityAdapter;
     ArrayList<String> dataList;
+    Button remEntry;
+    Button newEntry;
+    Button confirm;
+    EditText entryText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,5 +47,56 @@ public class MainActivity extends AppCompatActivity {
 
         cityAdapter = new ArrayAdapter<>(this, R.layout.content, dataList);
         cityList.setAdapter(cityAdapter);
+
+        entryText = findViewById(R.id.text_zone);
+        confirm = findViewById(R.id.confirm_button);
+
+        final int[] textType = {0};
+
+        newEntry = findViewById(R.id.new_entry);
+        newEntry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v.getId()==R.id.new_entry){
+                    if (entryText.getVisibility() == View.GONE ){
+                        entryText.setVisibility(View.VISIBLE);
+                        confirm.setVisibility(View.VISIBLE);
+                        textType[0] = 1;
+                    }
+                }
+            }
+        });
+
+        remEntry = findViewById(R.id.rem_entry);
+        remEntry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v.getId()==R.id.rem_entry){
+                    if (entryText.getVisibility() == View.GONE ){
+                        entryText.setVisibility(View.VISIBLE);
+                        confirm.setVisibility(View.VISIBLE);
+                        textType[0] = 2;
+                    }
+                }
+            }
+        });
+
+        confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String item = entryText.getText().toString().trim();
+                if (!item.isEmpty()){
+                    if (textType[0] == 1) {
+                        dataList.add(item);
+                    } else if (textType[0] == 2){
+                        dataList.remove(item);
+                    }
+                    cityAdapter.notifyDataSetChanged();
+                    entryText.setVisibility(View.GONE);
+                    confirm.setVisibility(View.GONE);
+                }
+            }
+        });
+
     }
 }

@@ -10,9 +10,63 @@
     <ListView
         android:id="@+id/city_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </ListView>
+
+    <Button
+        android:id="@+id/new_entry"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="Add City"
+        tools:ignore="MissingConstraints">
+
+    </Button>
+
+    <Button
+        android:id="@+id/rem_entry"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="211dp"
+        android:text="Remove City"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+    </Button>
+
+    <EditText
+        android:id="@+id/text_zone"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="685dp"
+        android:textSize="24dp"
+        android:hint="Enter a City"
+        android:inputType="textCapWords"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </EditText>
+
+    <Button
+        android:id="@+id/confirm_button"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="685dp"
+        android:text="Confirm"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+    </Button>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
