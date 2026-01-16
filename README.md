@@ -2,16 +2,21 @@
 
 ## Student Details
 
-- **Full Name:** `<Enter name>`
-- **CCID:** `<Enter ccid>`
+- **Full Name:** `Evan Dore`
+- **CCID:** `edore`
 
 ## References and Resources
 
-List any resources used here, or simply put `N/A` if not applicable.
+Handling Click Events
+https://www.geeksforgeeks.org/android/handling-click-events-button-android-java/
+Updating List
+https://stackoverflow.com/questions/2250770/how-to-refresh-android-listview
+Changing Text Visibility
+https://stackoverflow.com/questions/23468302/how-to-change-text-visibility-on-android-application
 
 ## Verbal Collaboration
 
 | Student Name | CCID      |
 | ------------ | --------- |
-| `student`    | `student` |
+| N/A          | N/a       |
 | `<Add more>` | `<CCID>`  |
